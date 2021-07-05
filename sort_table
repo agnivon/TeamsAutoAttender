@@ -1,0 +1,20 @@
+CREATE TABLE timetabled AS
+SELECT * FROM timetable ORDER BY (
+CASE day
+    WHEN 'Monday'
+    THEN 1
+    WHEN 'Tuesday'
+    THEN 2
+    WHEN 'Wednesday'
+    THEN 3
+    WHEN 'Thursday'
+    THEN 4
+    WHEN 'Friday'
+    THEN 5
+    WHEN 'Saturday'
+    THEN 6
+    END
+) ASC, start_time ASC;
+DROP TABLE timetable;
+ALTER TABLE timetabled
+RENAME TO timetable;
