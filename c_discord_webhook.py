@@ -1,10 +1,10 @@
+import os
 from discord_webhooks import DiscordWebhooks
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
 # Put your discord webhook url here.
 
-WEBHOOK_URL = 'https://discord.com/api/webhooks/786428735548031006/2wM2kjk-lHVciULTSQCNdaXgpPnt49MMnMGVun92JbfgNYekUM1_luvCAi8ICct_Xdfc'
-
+WEBHOOK_URL = os.getenv('WEBHOOK_URL')
 
 def send_msg2(ign, class_name, status, start_time, end_time):
     webhook = DiscordWebhooks(WEBHOOK_URL)
